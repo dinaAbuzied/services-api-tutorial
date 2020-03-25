@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodayDateService } from '../services/today-date.service';
+import { TodoService } from '../services/todo.service';
 
 @Component({
   selector: 'app-to-do-list',
@@ -8,11 +9,15 @@ import { TodayDateService } from '../services/today-date.service';
 })
 export class ToDoListComponent implements OnInit {
   date: string;
+  list = [];
 
-  constructor(private todayDate: TodayDateService) { }
+  constructor(private todayDate: TodayDateService, private todo: TodoService) { }
 
   ngOnInit() {
     this.date = this.todayDate.getDate();
+    this.todo.getList().subscribe(data => {
+      this.list = data;
+    });
   }
 
 }

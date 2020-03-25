@@ -2,31 +2,10 @@
     <span class="today-date">{{date}}</span>
     <h1>TO DO List</h1>
     <div class="list-cont">
-        <div class="item">
-            <p class="desc">To Do Item 1</p>
+        <div class="item" *ngFor="let item of list" [ngClass]="{'done': item.done}">
+            <p class="desc">{{item.desc}}</p>
             <div class="btn-cont">
-                <button class="done-btn">Done</button>
-                <button class="delete-btn">Delete</button>
-            </div>
-        </div>
-        <div class="item done">
-            <p class="desc">To Do Item 1</p>
-            <div class="btn-cont">
-                <button class="done-btn">Done</button>
-                <button class="delete-btn">Delete</button>
-            </div>
-        </div>
-        <div class="item">
-            <p class="desc">To Do Item 1</p>
-            <div class="btn-cont">
-                <button class="done-btn">Done</button>
-                <button class="delete-btn">Delete</button>
-            </div>
-        </div>
-        <div class="item">
-            <p class="desc">To Do Item 1</p>
-            <div class="btn-cont">
-                <button class="done-btn">Done</button>
+                <button class="done-btn">{{item.done ? 'Undo' : 'Done'}}</button>
                 <button class="delete-btn">Delete</button>
             </div>
         </div>
