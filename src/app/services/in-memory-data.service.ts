@@ -16,18 +16,18 @@ export class InMemoryDataService implements InMemoryDbService {
 
 const TODOList = [{
   id: 11,
-  desc: 'To Do Item 1',
+  desc: 'Study Angular 📚',
   done : false
 }, {
   id: 12,
-  desc: 'To Do Item 2',
+  desc: 'Drink coffee ☕',
   done : true
 }, {
   id: 13,
-  desc: 'To Do Item 3',
+  desc: 'Work work work (maybe 🤔)',
   done : false
 }, {
   id: 14,
-  desc: 'To Do Item 4',
+  desc: 'Netflix and chill 🍿',
   done : false
 }];
