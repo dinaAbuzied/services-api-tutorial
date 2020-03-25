@@ -5,7 +5,7 @@
         <div class="item" *ngFor="let item of list" [ngClass]="{'done': item.done}">
             <p class="desc">{{item.desc}}</p>
             <div class="btn-cont">
-                <button class="done-btn">{{item.done ? 'Undo' : 'Done'}}</button>
+                <button class="done-btn" (click)="updateItem(item)">{{item.done ? 'Undo' : 'Done'}}</button>
                 <button class="delete-btn" (click)="deleteItem(item.id)">Delete</button>
             </div>
         </div>

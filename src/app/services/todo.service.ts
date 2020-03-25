@@ -20,6 +20,10 @@ export class TodoService {
     return this.http.post<any>(this.listUrl, item, this.httpOptions);
   }
 
+  updateHero(item) {
+    return this.http.put(this.listUrl, item, this.httpOptions);
+  }
+
   removeItem(id: number) {
     const url = `${this.listUrl}/${id}`;
     return this.http.delete<any>(url, this.httpOptions);

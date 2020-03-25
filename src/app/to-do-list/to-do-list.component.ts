@@ -39,4 +39,11 @@ export class ToDoListComponent implements OnInit {
       this.itemValue = '';
     });
   }
+
+  updateItem(item) {
+    item.done = !item.done;
+    this.todo.updateHero(item).subscribe(() => {
+      console.log('updated', item);
+    });
+  }
 }
