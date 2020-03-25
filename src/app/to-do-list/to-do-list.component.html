@@ -6,7 +6,7 @@
             <p class="desc">{{item.desc}}</p>
             <div class="btn-cont">
                 <button class="done-btn">{{item.done ? 'Undo' : 'Done'}}</button>
-                <button class="delete-btn">Delete</button>
+                <button class="delete-btn" (click)="deleteItem(item.id)">Delete</button>
             </div>
         </div>
         <div class="item add-item">

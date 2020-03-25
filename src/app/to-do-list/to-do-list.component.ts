@@ -20,4 +20,10 @@ export class ToDoListComponent implements OnInit {
     });
   }
 
+  deleteItem(id: number) {
+    this.todo.removeItem(id).subscribe(() => {
+      console.log('item', id, 'deleted');
+      this.list = this.list.filter(item => item.id !== id);
+    });
+  }
 }
