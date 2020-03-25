@@ -10,9 +10,9 @@
             </div>
         </div>
         <div class="item add-item">
-            <textarea cols="20" rows="3"></textarea>
+            <textarea [(ngModel)]="itemValue" cols="20" rows="3"></textarea>
             <div class="btn-cont">
-                <button class="add-btn">Add</button>
+                <button (click)="addItem()" class="add-btn">Add</button>
             </div>
         </div>
     </div>

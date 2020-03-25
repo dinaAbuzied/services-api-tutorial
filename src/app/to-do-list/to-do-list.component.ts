@@ -10,6 +10,7 @@ import { TodoService } from '../services/todo.service';
 export class ToDoListComponent implements OnInit {
   date: string;
   list = [];
+  itemValue = '';
 
   constructor(private todayDate: TodayDateService, private todo: TodoService) { }
 
@@ -24,6 +25,18 @@ export class ToDoListComponent implements OnInit {
     this.todo.removeItem(id).subscribe(() => {
       console.log('item', id, 'deleted');
       this.list = this.list.filter(item => item.id !== id);
+    });
+  }
+
+  addItem() {
+    const newItem = {
+      desc: this.itemValue,
+      done : false
+    };
+    this.todo.addItem(newItem).subscribe(item => {
+      console.log('added', item);
+      this.list.push(item);
+      this.itemValue = '';
     });
   }
 }

@@ -16,8 +16,12 @@ export class TodoService {
     return this.http.get<any[]>(this.listUrl);
   }
 
+  addItem(item) {
+    return this.http.post<any>(this.listUrl, item, this.httpOptions);
+  }
+
   removeItem(id: number) {
     const url = `${this.listUrl}/${id}`;
-    return this.http.delete<any[]>(url, this.httpOptions);
+    return this.http.delete<any>(url, this.httpOptions);
   }
 }
