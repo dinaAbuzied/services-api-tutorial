@@ -18,6 +18,8 @@ export class ToDoListComponent implements OnInit {
     this.date = this.todayDate.getDate();
     this.todo.getList().subscribe(data => {
       this.list = data;
+    }, err => {
+      console.log(err);
     });
   }
 
